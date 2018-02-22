@@ -6,7 +6,7 @@ use App\Role;
 class RoleTableSeeder extends Seeder
 {
     const sys_admin = 'SYSADMIN';
-    const core_admin = 'COREADMIN';
+    const core_admin = 'CLIENT';
     const mca = "MCA";
     /**
      * Run the database seeds.
@@ -17,6 +17,6 @@ class RoleTableSeeder extends Seeder
     {
         Role::create(['name' => 'System Admin', 'code' => self::sys_admin]);
         Role::create(['name' => 'Core Admin', 'code' => self::core_admin]);
-        Role::create(['name' => 'MCA', 'code' => self::mca]);
+//        Role::create(['name' => 'MCA', 'code' => self::mca]);
     }
 }

@@ -78,7 +78,7 @@ class RoutesTableSeeder extends Seeder
         ]);
         $masterFileChild->roles()->attach($admin);
 
-        ## configurations
+        /*## configurations
         $configurations = Route::create([
             'route_name'=>'Configurations',
             'icon'=>'list',
@@ -141,13 +141,13 @@ class RoutesTableSeeder extends Seeder
             'url'=>'documents',
             'parent_route'=>$hBusiness->id
         ]);
-        $child->roles()->attach($admin);
+        $child->roles()->attach($admin);*/
 
 
         #### user management
         $user_mngt = new Route();
         $user_mngt->route_name = 'User Management';
-        $user_mngt->icon = 'user-account';
+        $user_mngt->icon = 'settings';
         $user_mngt->sequence = 6;
         $user_mngt->save();
         $user_mngt_id = $user_mngt->id;
@@ -168,19 +168,19 @@ class RoutesTableSeeder extends Seeder
         $roles->roles()->attach($admin);
 
 //        #### system
-        $system = new Route();
-        $system->route_name = 'System Settings';
-        $system->icon = 'settings';
-        $system->sequence = 7;
-        $system->save();
-        $system_id = $system->id;
-
-        #### system children
-        $routes = new Route();
-        $routes->route_name = 'System Routes';
-        $routes->url = 'routes';
-        $routes->parent_route = $system_id;
-        $routes->save();
-        $routes->roles()->attach($admin);
+//        $system = new Route();
+//        $system->route_name = 'System Settings';
+//        $system->icon = 'settings';
+//        $system->sequence = 7;
+//        $system->save();
+//        $system_id = $system->id;
+//
+//        #### system children
+//        $routes = new Route();
+//        $routes->route_name = 'System Routes';
+//        $routes->url = 'routes';
+//        $routes->parent_route = $system_id;
+//        $routes->save();
+//        $routes->roles()->attach($admin);
     }
 }

@@ -133,7 +133,7 @@ class AppServiceProvider extends ServiceProvider
                     $parent_menus_all = $menus->pluck('parent_route')->toArray();
                     $parent_menus = array_unique($parent_menus_all);
                     $whole_object = [];
-//                    print_r();die();
+//                    print_r($parent_menus);die();
                     $count = 101;
                     foreach ($parent_menus as $parent_menu){
                         $children = $menus->where('parent_route',$parent_menu)->toArray();
@@ -146,17 +146,19 @@ class AppServiceProvider extends ServiceProvider
 
                             ];
                         }
-                        $pmenu = $all_routes->find($parent_menu)->toArray();
+                        if($parent_menu != "") {
+                            $pmenu = $all_routes->find($parent_menu)->toArray();
 //                        prin($pmenu);die;
-                        $whole_object[] = (object)[
-                            'title'=>$pmenu['route_name'],
-                            'icon'=>$pmenu['icon'],
-                            'url'=>'#',
-                            'id'=>'idA'.$count,
-                            'parent'=>true,
-                            'children'=>$children_obj
-                        ];
+                            $whole_object[] = (object)[
+                                'title' => $pmenu['route_name'],
+                                'icon' => $pmenu['icon'],
+                                'url' => '#',
+                                'id' => 'idA' . $count,
+                                'parent' => true,
+                                'children' => $children_obj
+                            ];
 //                            print_r($whole_object);die();
+                        }
                         $count++;
                     }
                     $menu = $whole_object;

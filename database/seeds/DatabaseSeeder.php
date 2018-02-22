@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \Illuminate\Support\Facades\DB::transaction(function(){
-//            $this->call(MasterfileTableSeeder::class);
-//            $this->call(RoleTableSeeder::class);
-//            $this->call(UserTableSeeder::class);
+            $this->call(MasterfileTableSeeder::class);
+            $this->call(RoleTableSeeder::class);
+            $this->call(UserTableSeeder::class);
             $this->call(RoutesTableSeeder::class);
 //            $this->call(CommitteeTableSeeder::class);
 //            $this->call(BroadcastTypeTableSeeder::class);
