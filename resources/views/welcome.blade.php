@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="{{ asset('/front/assets/spinner/jm.spinner.css')}}" />
 
     <style>
+        .opacity-full{
+            opacity: 0.5;
+        }
         .spinner{
             position: fixed;
             background: white;
@@ -27,31 +30,11 @@
         <div class="bounce3"></div>
     </div>
     {{--</div>--}}
-
-    <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-white nav-border-bottom no-transition" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-6"><a class="logo-light" href="index.html"><img alt="" src="images/logo-white.png" class="logo" /></a><a class="logo-dark" href="index.html"><img alt="" src="images/logo-light.png" class="logo" /></a></div>
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                </div>
-                <div class="col-md-9 text-right">
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#slider" class="inner-link">Home</a> </li>
-                            <li><a href="{{ url('login') }}" class="inner-link">Login</a> </li>
-
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-    </nav>
+@include('layouts.partials.fnav')
     <!--end of navigation-->
     <section class="parallax2 parallax-fix full-screen no-padding scroll-to-down" onclick="scrollToDown()" id="slider">
         <div class="opacity-full bg-dark-gray"></div>
-        <img class="parallax-background-img" src="{{ asset('img/homepage-splash.jpg') }}" alt="" />
+        <img class="parallax-background-img" src="{{ asset('images/home-splash.png') }}" alt="" />
         <div class="container full-screen position-relative">
             <div class="slider-typography">
                 <div class="slider-text-middle-main">

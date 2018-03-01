@@ -3,7 +3,7 @@
         <nav class="pull-left">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('home') }}">
                         Home
                     </a>
                 </li>
@@ -15,7 +15,7 @@
             <script>
                 document.write(new Date().getFullYear())
             </script>
-           , County assembly document management solution
+           , <a href="{{ url('/') }}">Businessforsale.co.ke</a>
         </p>
     </div>
 </footer>

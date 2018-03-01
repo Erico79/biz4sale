@@ -12,7 +12,7 @@
 <!-- easy piechart-->
 <script type="text/javascript" src="{{ asset('front/assets/js/jquery.easypiechart.js')}}"></script>
 <!-- parallax -->
-{{--<script type="text/javascript" src="{{ asset('front/assets/js/jquery.parallax-1.1.3.js')}}"></script>--}}
+<script type="text/javascript" src="{{ asset('front/assets/js/jquery.parallax-1.1.3.js')}}"></script>
 <!--portfolio with shorting tab -->
 <script type="text/javascript" src="{{ asset('front/assets/js/jquery.isotope.min.js')}}"></script>
 <!-- owl slider  -->

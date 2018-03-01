@@ -78,7 +78,7 @@ class RoutesTableSeeder extends Seeder
         ]);
         $masterFileChild->roles()->attach($admin);
 
-        /*## configurations
+        ## configurations
         $configurations = Route::create([
             'route_name'=>'Configurations',
             'icon'=>'list',
@@ -87,61 +87,20 @@ class RoutesTableSeeder extends Seeder
 
         //configurations children
         $configurationChild = Route::create([
-            'route_name'=>'Sessions',
-            'url'=>'sessions',
+            'route_name'=>'Business Categories',
+            'url'=>'categories',
             'parent_route'=>$configurations->id,
         ]);
         $configurationChild->roles()->attach($admin);
-        //plenary sitting
-        $configurationChild = Route::create([
-            'route_name'=>'Plenary sittings',
-            'url'=>'plenarySittings',
-            'parent_route'=>$configurations->id,
-        ]);
-        $configurationChild->roles()->attach($admin);
-
-        #### committees
-        $committee = Route::create([
-            'route_name'=>'Committee Management',
-            'icon'=>'group',
-            'sequence'=>4
-        ]);
-
-        $child = Route::create([
-            'route_name'=>'Committees',
-            'url'=>'committees',
-            'parent_route'=>$committee->id
-        ]);
-        $child->roles()->attach($admin);
-
-        $child = Route::create([
-            'route_name'=>'Documents',
-            'url'=>'committeeDocuments',
-            'parent_route'=>$committee->id
-        ]);
-        $child->roles()->attach($admin);
+//        //plenary sitting
+//        $configurationChild = Route::create([
+//            'route_name'=>'Plenary sittings',
+//            'url'=>'plenarySittings',
+//            'parent_route'=>$configurations->id,
+//        ]);
+//        $configurationChild->roles()->attach($admin);
 
 
-        #### House business
-        $hBusiness = Route::create([
-            'route_name'=>'House Business',
-            'icon'=>'insert_drive_file',
-            'sequence'=>5
-        ]);
-
-        $child = Route::create([
-            'route_name'=>'Document Categories',
-            'url'=>'documentCategories',
-            'parent_route'=>$hBusiness->id
-        ]);
-        $child->roles()->attach($admin);
-
-        $child = Route::create([
-            'route_name'=>'Documents',
-            'url'=>'documents',
-            'parent_route'=>$hBusiness->id
-        ]);
-        $child->roles()->attach($admin);*/
 
 
         #### user management

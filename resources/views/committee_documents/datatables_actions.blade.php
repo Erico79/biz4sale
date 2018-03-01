@@ -1,1 +1,0 @@
-<a href="#delete-modal" rel="tooltip" title="delete" data-toggle="modal" action="{!! url('/committeeDocuments/'.$id) !!}" class="btn btn-simple btn-danger btn-icon common-delete"><i class="material-icons">close</i></a>

@@ -73,3 +73,5 @@ Route::get('/mailable', function () {
 Route::resource('plenarySittings', 'PlenarySittingController');
 
 Route::resource('committeeDocuments', 'CommitteeDocumentController');
+
+Route::resource('categories', 'CategoryController');
