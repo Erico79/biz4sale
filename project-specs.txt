@@ -1,0 +1,146 @@
+Step Three. Business Owner Registration Registration
+
+Build your Listing
+1. Personal Details
+    - Title
+    - First Name
+    - Last Name
+
+    1a) Login Credentials
+        - Email Address (should be confirmed)
+        - Password
+        - Telephone Number
+
+2. Listing Details
+    - Listing Headline (This will appear as the main headline for your listing.
+        For example, 'Successful Devon Hotel and Restaurant For Sale'.
+        Limited to 8 words. (Please note, we automatically add "For Sale" to the end of every title).)
+    - General Summary (Text Area) (Highlight the selling points of the business for sale. Say as much or as little as you want.
+        Please do not add phone numbers or email addresses to the description.
+        We will remove them as they cannot be tracked)
+    - Status of Business (Radio Buttons)
+        o For Sale
+        o Under Offer
+        o Sold (Subject to Contract)
+
+3. Business Type
+    - A Business owner can choose upto 3 categories that your business will appear in
+    - Please select the Sector, Sub Sector and Category relevant to your business.
+
+4. Select City/Town
+    - City/Town (Text Input which auto completes)
+
+5. Property and Financial Details (All fields are required)
+    - Property Status (Radio buttons) hint* Is real property included? Or is the property leased by the business?
+        o Real Property
+        o Lease
+        o Both freehold and leasehold
+        o N/A
+
+    - Asking Price (Select List) hint* Many buyers search our database of businesses by asking price.
+        If you choose "Undisclosed", some buyers may not find your listing.
+
+        a) As a real property business (including trade, goodwill etc.) *
+            o Under $100k
+            o $100k to $250k
+            o $250k to $500k
+            o $500k to $1M
+            o $1M to $5M
+            o Over $5M
+            o Undisclosed
+            o Enter Specific Asking Price
+
+        b) As a lease business (including trade, goodwill etc.) *
+            o Under $100k
+            o $100k to $250k
+            o $250k to $500k
+            o $500k to $1M
+            o $1M to $5M
+            o Over $5M
+            o Undisclosed
+            o Enter Specific Asking Price
+            o Not Applicable
+
+        c) Sales Revenue
+            o Under $100k
+            o $100k to $250k
+            o $250k to $500k
+            o $500k to $1M
+            o $1M to $5M
+            o Over $5M
+            o Undisclosed
+            o Enter Specific cash flow
+            o Not Applicable
+
+            - Frequency (Select List) o Annual o Quarterly o Weekly
+
+6. Documents
+    - Upload a Document Hint* You can upload up to 3 documents, including PDF, Word, Excel and other document types.
+        Browse for documents on your hard drive to add additional information about the business for sale such as financials,
+        business plans, presentations, company brochures etc.
+
+    - Website Address
+
+Further Business Details
+    Section A - Environment
+        - Location (Text Area) Hint * Please describe the location of the business; e.g.
+            prime high street location, trading estate, online, etc.
+        - Premises Details (Text Area) Hint * Please describe the premises within which the business is located, if applicable.
+        - Competition (Text Area) Hint * Please describe any competitive considerations that have faced the business or
+            may face the business in the future.
+        - Expansion Potential (Text Area) Hint * Please describe any opportunities for expansion that exist
+            or may be available in the future.
+        - Living Accommodation (Checkbox) Hint * Check this box if accommodation is included.
+        - Living Accommodation Description (Text Area) Please describe the living accommodation associated with this business;
+            e.g. 2 bed flat on top of the business.
+        - Size in Square Feet of Property if applicable (Number)
+        - Planning Consent (Text Area)
+
+    Section B - Operation
+        - Years Established (Number) Hint * List the number of years the business has been established.
+        - Employees (Number) Hint * List the number of employees the business currently employs.
+        - Trading Hours (Text Area) Hint * List the trading hours of the business; e.g. 24/7 operation,
+            Mon-Sat, Mon-Fri business working hours, etc.
+        - Support & Training (Text Area) Hint * Describe any support or training that can be offered to a prospective buyer.
+
+    Section C - Terms
+        - Relocatable (Radio Buttons) Hint * Can the business be relocated?
+        - Home Based (Check Box) Hint * Check this box if the business can be run from home.
+        - Leasehold Rent (Select List)
+            o Per Annum
+            o Per Sq Ft. Per Annum
+
+        - Amount USD ($)
+        - Lease Terms (Text Area) Hint * If applicable, describe the terms of the lease;
+            e.g. the number of years left on the lease and any associated fees per annum.
+        - Franchise (Check Box) Hint * Check this box if the business is a franchise.
+        - Franchise Terms (Text Area)
+        - Business Closed or Asset Sale (Checkbox) Hint * Check this box if the business is not operating and only the assets are being sold.
+        - Business in Administration / Receivership (Checkbox) Hint * Please tick this box if the business is currently in administration / receivership.
+        - Owner Financing Available (Checkbox) Hint * Please tick this box if you are willing to help finance the business sale.
+            * Instead of borrowing all the capital from a bank or other finance provider,
+                the buyer borrows all or part of the sale price from the seller.
+                The buyer then repays the loan in instalments over a fixed period.
+                Please state details of any arrangement you are willing to provide.
+        - Financing Available (Text Area) Hint * If applicable, describe any available financing options to the buyer.
+        - Reason For Selling (Text Area) Hint * Please state the reason(s) for selling this business;
+            e.g. retirement, ill health, business is non-core etc.
+
+    Section D - Assets
+        - Furniture, Fixtures & Fittings (Checkbox) Hint * Check this box if the furniture, fixtures and
+            fittings are included in the asking price.
+        - Value of Furniture, Fixtures or Fittings (Number) Dollars Hint * Enter value of any furniture, fixtures and fittings.
+        - Inventory / Stock (Checkbox) Hint * Check this box if any inventory / stock is included in the asking price.
+        - Value of Inventory/Stock (Number) Dollars Hint * Enter the value of any inventory / stock.
+
+
+Step Four - More Exposure & More Responses
+    - Business Spotlight – Receive front page exposure - $9.00  USD (Checkbox)
+        Hint * Check this box to appear in the Business Spotlight section.
+        Details of your listing will be promoted on the home page of BusinessesForSale.com for a 24-hour period and
+        will be seen thousands of prospective buyers.
+
+    - Terms & Conditions
+        o Email preferences Hint * Yes I wish to receive newsletters and other emails directly from BusinessesForSale.com
+        o Sharing your information Hint * Yes I wish to receive occasional emails from carefully selected third parties.
+        o Disclaimer * Hint * I have read and accept the Terms and Conditions and >Privacy Policy.
