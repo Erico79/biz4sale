@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('')
+Route::group(['prefix' => 'register'], function (){
+    Route::post('seller', 'SellerRegistrationController@store');
+});

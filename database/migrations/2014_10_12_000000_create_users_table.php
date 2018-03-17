@@ -18,6 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('masterfile_id')->unsigned();
+            $table->foreign('masterfile_id')
+                ->references('id')->on('masterfiles')
+                ->onUpdate('cascade')->onDelete('no action');
             $table->rememberToken();
             $table->timestamps();
         });
