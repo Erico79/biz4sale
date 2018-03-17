@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'register'], function (){
     Route::post('seller', 'SellerRegistrationController@store');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('categories', 'CategoryController');
