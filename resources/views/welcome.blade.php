@@ -139,8 +139,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group email">
                                         <i class="material-icons icon">phone</i>
-                                        <label class="sr-only" for="signup-phone">Phone No</label>
-                                        <input id="signup-phone" name="phone_no" type="text" maxlength="10" class="form-control" placeholder="Your Mobile No" required>
+                                        <label class="sr-only" for="signup-phone">Mobile No</label>
+                                        <input id="signup-phone" name="phone_no" type="text" minlength="10" maxlength="10"
+                                               class="form-control" placeholder="Your Mobile No" required title="Your mobile no must be at least 10 characters long e.g. 0712123456">
                                     </div>
                                 </div>
                             </div>

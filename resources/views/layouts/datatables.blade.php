@@ -5,18 +5,18 @@
 @endsection
 
 @section('layout')
-    @include('layouts.partials.back.auth-nav')
-
-    <div class="wrapper wrapper-full-page">
-        <div class="full-page login-page" filter-color="black" data-image="{{ asset('assets2/img/login.jpeg') }}">
-            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
-
-            @yield('content')
-
+    <div class="wrapper">
+        @include('layouts.partials.back.sidebar')
+        <div class="main-panel">
+            @include('layouts.partials.back.nav')
+            <div class="content">
+                <div class="container-fluid">
+                    @yield('content')
+                </div>
+            </div>
             @include('layouts.partials.back.footer')
         </div>
     </div>
-
 @endsection
 
 @section('js')
@@ -55,13 +55,45 @@
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('assets2/js/demo.js') }}"></script>
     <script type="text/javascript">
-        $().ready(function() {
-            demo.checkFullPageBackgroundImage();
+        $(document).ready(function() {
+            $('#datatables').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search records",
+                }
 
-            setTimeout(function() {
-                // after 1000 ms we add the class animated to the login/register card
-                $('.card').removeClass('card-hidden');
-            }, 700)
+            });
+
+
+            var table = $('#datatables').DataTable();
+
+            // Edit record
+            table.on('click', '.edit', function() {
+                $tr = $(this).closest('tr');
+
+                var data = table.row($tr).data();
+                alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
+            });
+
+            // Delete a record
+            table.on('click', '.remove', function(e) {
+                $tr = $(this).closest('tr');
+                table.row($tr).remove().draw();
+                e.preventDefault();
+            });
+
+            //Like record
+            table.on('click', '.like', function() {
+                alert('You clicked on Like button');
+            });
+
+            $('.card .material-datatables label').addClass('form-group');
         });
     </script>
     @stack('js')

@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'register'], function (){
     Route::post('seller', 'SellerRegistrationController@store');
+
 });
 Auth::routes();
 

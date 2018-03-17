@@ -17,14 +17,21 @@ class SellerRegistrationController extends Controller
             'phone_no' => 'required|unique:masterfiles'
         ]);
 
-        Masterfile::create($post);
+        $mf = Masterfile::create($post);
 
         $random_pass = random(100000, 999999);
 
         User::create([
             'email' => request('email'),
             'password' => bcrypt($random_pass),
-            'role_id' => Role::seller()->id
+            'role_id' => Role::seller()->id,
+            'status' => 1,
+            'masterfile_id' => $mf->id
         ]);
+
+        // event for seller registration
+
+        request()->session()->flash('success', 'You have been successfully registered');
+        return redirect()->route('upload-business');
     }
 }

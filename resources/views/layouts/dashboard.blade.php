@@ -5,21 +5,22 @@
 @endsection
 
 @section('layout')
-    @include('layouts.partials.back.auth-nav')
-
-    <div class="wrapper wrapper-full-page">
-        <div class="full-page login-page" filter-color="black" data-image="{{ asset('assets2/img/login.jpeg') }}">
-            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
-
-            @yield('content')
-
+    <div class="wrapper">
+        @include('layouts.partials.back.sidebar')
+        <div class="main-panel">
+            @include('layouts.partials.back.nav')
+            <div class="content">
+                <div class="container-fluid">
+                    @yield('content')
+                </div>
+            </div>
             @include('layouts.partials.back.footer')
         </div>
     </div>
-
 @endsection
 
 @section('js')
+    <script src="{{ asset('assets2/js/perfect-scrollbar.jquery.min.js') }}" type="text/javascript"></script>
     <!-- Forms Validations Plugin -->
     <script src="{{ asset('assets2/js/jquery.validate.min.js') }}"></script>
     <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
@@ -55,13 +56,12 @@
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('assets2/js/demo.js') }}"></script>
     <script type="text/javascript">
-        $().ready(function() {
-            demo.checkFullPageBackgroundImage();
+        $(document).ready(function() {
 
-            setTimeout(function() {
-                // after 1000 ms we add the class animated to the login/register card
-                $('.card').removeClass('card-hidden');
-            }, 700)
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initDashboardPageCharts();
+
+            demo.initVectorMap();
         });
     </script>
     @stack('js')

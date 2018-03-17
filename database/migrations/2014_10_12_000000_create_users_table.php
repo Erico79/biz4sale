@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('masterfile_id')->unsigned();
             $table->boolean('status')->default(false);
+            $table->boolean('phone_verified')->default(false);
+            $table->boolean('email_verified')->default(false);
             $table->integer('role_id')->unsigned();
             $table->foreign('masterfile_id')
                 ->references('id')->on('masterfiles')

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        view()->composer(['layouts.partials.back.sidebar', 'layouts.partials.back.nav'], function ($view) {
+            $menu = config('menu.admin');
+
+            $view->with('user', auth()->user())
+                ->with('menu', $menu)
+                ->with('current_route', Route::current());
+
+        });
     }
 }

@@ -1,11 +1,11 @@
 <footer class="footer">
-    <div class="container">
+    <div class="container-fluid">
         <p class="copyright pull-right">
             &copy;
             <script>
                 document.write(new Date().getFullYear())
             </script>
-            {{--<a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web--}}
+            <a href="http://www.creative-tim.com">{{ config('app.name') }}</a>
         </p>
     </div>
 </footer>
