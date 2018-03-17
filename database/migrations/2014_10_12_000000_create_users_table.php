@@ -19,10 +19,15 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('masterfile_id')->unsigned();
+            $table->boolean('status')->default(false);
+            $table->integer('role_id')->unsigned();
             $table->foreign('masterfile_id')
                 ->references('id')->on('masterfiles')
                 ->onUpdate('cascade')->onDelete('no action');
             $table->rememberToken();
+            $table->foreign('role_id')
+                ->references('id')->on('roles')
+                ->onUpdate('cascade')->onDelete('no action');
             $table->timestamps();
         });
     }
