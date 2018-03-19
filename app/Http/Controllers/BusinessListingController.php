@@ -12,6 +12,6 @@ class BusinessListingController extends Controller
     }
 
     public function index() {
-        return view('business-listing');
+        return view('listings.index');
     }
 }
