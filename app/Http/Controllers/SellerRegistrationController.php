@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Masterfile;
+use App\Mail\SellerEmailVerification;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SellerRegistrationController extends Controller
 {
@@ -35,7 +37,10 @@ class SellerRegistrationController extends Controller
             'masterfile_id' => $mf->id
         ]);
 
-        // event for seller registration
+        // send verification email
+        Mail::to($user)->send(new SellerEmailVerification($user->masterfile));
+
+        // send phone number verification
 
         auth()->login($user);
 
@@ -51,5 +56,9 @@ class SellerRegistrationController extends Controller
     public function phoneVerification(Request $request) {
         $phone_no = $request->user()->masterfile->phone_no;
         return view('seller.phone-verification')->with('phone', $phone_no);
+    }
+
+    public function verifyEmail($user_id) {
+        dump($user_id);
     }
 }

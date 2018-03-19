@@ -18,7 +18,7 @@ class LoggedIn
         if (auth()->check()) {
             return $next($request);
         } else {
-            request()->session()->flash('login', 'Please ensure you are logged in first!');
+            request()->session()->flash('info', 'Please ensure you are logged in first!');
             return redirect('/');
         }
     }

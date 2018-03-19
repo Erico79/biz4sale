@@ -9,7 +9,7 @@
             $('#signup-modal').modal('show');
         @endif
 
-        @if(session()->has('login'))
+        @if(session()->has('info'))
             $('#login-modal').modal('show');
         @endif
     </script>
@@ -49,26 +49,28 @@
                     <h4 id="loginModalLabel" class="modal-title text-center">Log in to your account</h4>
                 </div>
                 <div class="modal-body">
-                    {{--<div class="social-login text-center">--}}
-                        {{--<ul class="social-buttons list-unstyled">--}}
-                            {{--<li><a href="#" class="btn btn-social btn-google btn-block"><i class="fa fa-google" aria-hidden="true"></i><span class="btn-text">Log in with Google</span></a></li>--}}
-                            {{--<li><a href="#" class="btn btn-social btn-facebook btn-block"><i class="fa fa-facebook" aria-hidden="true"></i><span class="btn-text">Log in with Facebook</span></a></li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
+                    @include('common.info')
+                    <div class="social-login text-center">
+                        <ul class="social-buttons list-unstyled">
+                            <li><a href="#" class="btn btn-social btn-google btn-block"><i class="fa fa-google" aria-hidden="true"></i><span class="btn-text">Log in with Google</span></a></li>
+                            <li><a href="#" class="btn btn-social btn-linkedin btn-block"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="btn-text">Log in with Facebook</span></a></li>
+                        </ul>
+                    </div>
                     <div class="divider">
                         <span class="or-text">OR</span>
                     </div>
                     <div class="login-form-container">
-                        <form class="login-form">
+                        <form class="login-form" action="{{ url('seller/login') }}" method="post">
+                            {{ csrf_field() }}
                             <div class="form-group email">
                                 <i class="material-icons icon">&#xE0BE;</i>
                                 <label class="sr-only" for="login-email">Email</label>
-                                <input id="login-email" name="login-email" type="email" class="form-control login-email" placeholder="Email">
+                                <input id="login-email" name="email" type="email" class="form-control login-email" placeholder="Email" required>
                             </div><!--//form-group-->
                             <div class="form-group password">
                                 <i class="material-icons icon">&#xE897;</i>
                                 <label class="sr-only" for="login-password">Password</label>
-                                <input id="login-password" name="login-password" type="password" class="form-control login-password" placeholder="Password">
+                                <input id="login-password" name="password" type="password" class="form-control login-password" placeholder="Password" required>
                             </div><!--//form-group-->
                             <div class="form-group">
                                 <div class="extra">

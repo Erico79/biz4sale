@@ -17,11 +17,14 @@ Route::get('/', function () {
 Route::get('business-listing', 'BusinessListingController@index')
     ->name('upload-business')
     ->middleware('email.verified', 'phone.verified', 'logged.in');
-Route::get('email-verification', 'SellerRegistrationController@emailVerification');
-Route::get('phone-verification', 'SellerRegistrationController@phoneVerification');
+Route::get('email-verification', 'SellerRegistrationController@emailVerification')->middleware('logged.in');
+Route::get('phone-verification', 'SellerRegistrationController@phoneVerification')->middleware('logged.in');
 
 Route::group(['prefix' => 'register'], function (){
     Route::post('seller', 'SellerRegistrationController@store');
+});
+Route::group(['prefix' => 'confirm'], function (){
+    Route::get('seller/{user_id}', 'SellerRegistrationController@verifyEmail');
 });
 Auth::routes();
 
