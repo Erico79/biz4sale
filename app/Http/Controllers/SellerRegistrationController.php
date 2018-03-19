@@ -27,7 +27,7 @@ class SellerRegistrationController extends Controller
 
         $random_pass = rand(100000, 999999);
 
-        User::create([
+        $user = User::create([
             'email' => request('email'),
             'password' => bcrypt($random_pass),
             'role_id' => Role::seller()->id,
@@ -37,7 +37,19 @@ class SellerRegistrationController extends Controller
 
         // event for seller registration
 
-        request()->session()->flash('success', 'You have been successfully registered');
+        auth()->login($user);
+
+        request()->session()->flash('success', 'You have been successfully registered.');
         return redirect()->route('upload-business');
+    }
+
+    public function emailVerification(Request $request) {
+        $user = $request->user();
+        return view('seller.email-verification')->with('email', $user->email);
+    }
+
+    public function phoneVerification(Request $request) {
+        $phone_no = $request->user()->masterfile->phone_no;
+        return view('seller.phone-verification')->with('phone', $phone_no);
     }
 }

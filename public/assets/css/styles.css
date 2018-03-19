@@ -795,21 +795,18 @@ textarea {
   height: 680px;
 }
 .hero-slider-wrapper .flexslider .slide.slide-1 {
-  background: #35373C url('assets/images/hero/hero-1.jpg') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .hero-slider-wrapper .flexslider .slide.slide-2 {
-  background: #35373C url('assets/images/hero/hero-2.jpg') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .hero-slider-wrapper .flexslider .slide.slide-3 {
-  background: #35373C url('assets/images/hero/hero-3.jpg') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

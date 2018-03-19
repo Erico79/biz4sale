@@ -2,6 +2,9 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CheckEmailVerification;
+use App\Http\Middleware\CheckPhoneVerification;
+use App\Http\Middleware\LoggedIn;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -59,5 +62,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'email.verified' => CheckEmailVerification::class,
+        'phone.verified' => CheckPhoneVerification::class,
+        'logged.in' => LoggedIn::class
     ];
 }

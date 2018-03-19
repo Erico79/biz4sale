@@ -1,7 +1,6 @@
 @extends('layouts.front')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('assets/plugins/flexslider/flexslider.css') }}">
     @stack('css')
 @endsection
 

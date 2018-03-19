@@ -4,11 +4,15 @@
 @push('js')
     <!--//Page Specific JS -->
     <script type="text/javascript" src="{{ asset('assets/js/home.js') }}"></script>
-    @if(count($errors->all()))
-        <script>
+    <script>
+        @if(count($errors->all()))
             $('#signup-modal').modal('show');
-        </script>
-    @endif
+        @endif
+
+        @if(session()->has('login'))
+            $('#login-modal').modal('show');
+        @endif
+    </script>
 @endpush
 
 @section('content')
@@ -111,21 +115,22 @@
                         <span class="or-text">OR</span>
                     </div>
                     <div class="login-form-container">
+                        @include('common.warnings')
                         <form class="login-form" action="{{ url('register/seller') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group firstname">
+                                    <div class="form-group firstname has-danger">
                                         <i class="material-icons icon">&#xE7FD;</i>
                                         <label class="sr-only" for="signup-firstname">First Name</label>
-                                        <input id="signup-firstname" name="first_name" type="text" class="form-control" placeholder="Your First Name" required>
+                                        <input id="signup-firstname" value="{{ old('first_name') }}" name="first_name" type="text" class="form-control" placeholder="Your First Name" required>
                                     </div><!--//form-group-->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group lastname">
                                         <i class="material-icons icon">&#xE7FD;</i>
                                         <label class="sr-only" for="signup-lastname">Last Name</label>
-                                        <input id="signup-lastname" name="last_name" type="text" class="form-control" placeholder="Your Last Name" required>
+                                        <input id="signup-lastname" value="{{ old('last_name') }}" name="last_name" type="text" class="form-control" placeholder="Your Last Name" required>
                                     </div><!--//form-group-->
                                 </div>
                             </div>
@@ -135,7 +140,7 @@
                                     <div class="form-group email">
                                         <i class="material-icons icon">&#xE0BE;</i>
                                         <label class="sr-only" for="signup-email">Email Address</label>
-                                        <input id="signup-email" name="email" type="email" class="form-control" placeholder="Your Email" required>
+                                        <input id="signup-email" value="{{ old('email') }}" name="email" type="email" class="form-control" placeholder="Your Email" required>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +150,7 @@
                                     <div class="form-group email">
                                         <i class="material-icons icon">phone</i>
                                         <label class="sr-only" for="signup-phone">Mobile No</label>
-                                        <input id="signup-phone" name="phone_no" type="text" minlength="10" maxlength="10"
+                                        <input id="signup-phone" value="{{ old('phone_no') }}" name="phone_no" type="text" minlength="10" maxlength="10"
                                                class="form-control" placeholder="Your Mobile No" required title="Your mobile no must be at least 10 characters long e.g. 0712123456">
                                     </div>
                                 </div>
