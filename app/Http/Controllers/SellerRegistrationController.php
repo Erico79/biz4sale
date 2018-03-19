@@ -88,4 +88,8 @@ class SellerRegistrationController extends Controller
         Mail::to($user)->send(new SellerEmailVerification($user, Crypt::encryptString($user->id)));
         return redirect()->route('upload-business');
     }
+
+    public function resendVerificationSMS() {
+
+    }
 }

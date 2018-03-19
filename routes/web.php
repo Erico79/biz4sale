@@ -27,7 +27,7 @@ Route::group(['prefix' => 'register'], function (){
 });
 Route::group(['prefix' => 'confirm', 'middleware' => 'logged.in'], function (){
     Route::get('seller/{user_id}', 'SellerRegistrationController@verifyEmail');
-    Route::post('seller/phone', 'SellerRegistrationController@verifyPhoneNumber');
+    Route::post('phone-verification', 'SellerRegistrationController@verifyPhoneNumber');
 });
 Auth::routes();
 
