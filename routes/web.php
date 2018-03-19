@@ -14,10 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('business-listing', 'BusinessListingController@index')->name('upload-business');
 
 Route::group(['prefix' => 'register'], function (){
     Route::post('seller', 'SellerRegistrationController@store');
-
 });
 Auth::routes();
 

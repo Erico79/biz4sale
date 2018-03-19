@@ -4,6 +4,11 @@
 @push('js')
     <!--//Page Specific JS -->
     <script type="text/javascript" src="{{ asset('assets/js/home.js') }}"></script>
+    @if(count($errors->all()))
+        <script>
+            $('#signup-modal').modal('show');
+        </script>
+    @endif
 @endpush
 
 @section('content')

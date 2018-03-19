@@ -10,16 +10,22 @@ use Illuminate\Http\Request;
 class SellerRegistrationController extends Controller
 {
     public function store() {
-        $post = request()->validate([
+        request()->validate([
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|unique:users',
-            'phone_no' => 'required|unique:masterfiles'
+            'phone_no' => 'required|unique:masterfiles|min:10|max:10',
+            'password' => 'required|confirmed'
         ]);
 
-        $mf = Masterfile::create($post);
+        $mf = Masterfile::create([
+            'first_name' => request('first_name'),
+            'last_name' => request('last_name'),
+            'phone_no' => request('phone_no'),
+            'b_role' => Role::Seller
+        ]);
 
-        $random_pass = random(100000, 999999);
+        $random_pass = rand(100000, 999999);
 
         User::create([
             'email' => request('email'),
