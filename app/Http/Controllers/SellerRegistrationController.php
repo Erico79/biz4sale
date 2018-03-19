@@ -7,6 +7,7 @@ use App\Mail\SellerEmailVerification;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Mail;
 
 class SellerRegistrationController extends Controller
@@ -38,10 +39,9 @@ class SellerRegistrationController extends Controller
         ]);
 
         // send verification email
-        Mail::to($user)->send(new SellerEmailVerification($user->masterfile));
+        Mail::to($user)->send(new SellerEmailVerification($user, Crypt::encryptString($user->id)));
 
-        // send phone number verification
-
+        // autologin the seller
         auth()->login($user);
 
         request()->session()->flash('success', 'You have been successfully registered.');
@@ -59,6 +59,33 @@ class SellerRegistrationController extends Controller
     }
 
     public function verifyEmail($user_id) {
-        dump($user_id);
+        $user_id = Crypt::decryptString($user_id);
+        User::where('id', $user_id)->update(['email_verified' => 1]);
+
+        // TODO send verification sms
+
+        request()->session()->flash('success', 'You have confirmed your email successfully.');
+        return redirect()->route('upload-business');
+    }
+
+    public function verifyPhoneNumber() {
+        $post = request()->validate(['code', 'required|min:4|max:4']);
+
+        if (session()->has('verification_code')) {
+            if ($post['code'] == session('verification_code')) {
+                request()->session()->flash('success', 'Your phone number has been verified successfully');
+                session()->forget('verification_code');
+            } else {
+                request()->session()->flash('error', 'You have entered an invalid Verification Code!');
+            }
+        }
+
+        return redirect()->route('upload-business');
+    }
+
+    public function resendVerificationEmail(Request $request) {
+        $user = $request->user();
+        Mail::to($user)->send(new SellerEmailVerification($user, Crypt::encryptString($user->id)));
+        return redirect()->route('upload-business');
     }
 }

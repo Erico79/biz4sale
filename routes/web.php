@@ -18,13 +18,16 @@ Route::get('business-listing', 'BusinessListingController@index')
     ->name('upload-business')
     ->middleware('email.verified', 'phone.verified', 'logged.in');
 Route::get('email-verification', 'SellerRegistrationController@emailVerification')->middleware('logged.in');
+Route::get('resend/verification/email', 'SellerRegistrationController@resendVerificationEmail')->middleware('logged.in');
 Route::get('phone-verification', 'SellerRegistrationController@phoneVerification')->middleware('logged.in');
+Route::get('resend/verification/sms', 'SellerRegistrationController@resendVerificationSMS')->middleware('logged.in');
 
 Route::group(['prefix' => 'register'], function (){
     Route::post('seller', 'SellerRegistrationController@store');
 });
-Route::group(['prefix' => 'confirm'], function (){
+Route::group(['prefix' => 'confirm', 'middleware' => 'logged.in'], function (){
     Route::get('seller/{user_id}', 'SellerRegistrationController@verifyEmail');
+    Route::post('seller/phone', 'SellerRegistrationController@verifyPhoneNumber');
 });
 Auth::routes();
 

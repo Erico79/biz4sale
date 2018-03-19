@@ -10,15 +10,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class SellerEmailVerification extends Mailable
 {
     use Queueable, SerializesModels;
-    public $masterfile;
+    public $user;
+    public $enc_user_id;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($masterfile)
+    public function __construct($user, $enc_user_id)
     {
-        $this->masterfile = $masterfile;
+        $this->user = $user;
+        $this->enc_user_id = $enc_user_id;
     }
 
     /**
