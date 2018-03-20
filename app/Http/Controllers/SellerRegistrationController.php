@@ -28,11 +28,9 @@ class SellerRegistrationController extends Controller
             'b_role' => Role::Seller
         ]);
 
-        $random_pass = rand(100000, 999999);
-
         $user = User::create([
             'email' => request('email'),
-            'password' => bcrypt($random_pass),
+            'password' => bcrypt(request('password')),
             'role_id' => Role::seller()->id,
             'status' => 1,
             'masterfile_id' => $mf->id

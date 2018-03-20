@@ -65,7 +65,7 @@
                             <div class="form-group email">
                                 <i class="material-icons icon">&#xE0BE;</i>
                                 <label class="sr-only" for="login-email">Email</label>
-                                <input id="login-email" name="email" type="email" class="form-control login-email" placeholder="Email" required>
+                                <input id="login-email" name="email" type="email" value="{{ old('email') }}" class="form-control login-email" placeholder="Email" required>
                             </div><!--//form-group-->
                             <div class="form-group password">
                                 <i class="material-icons icon">&#xE897;</i>

@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\CheckEmailVerification;
+use App\Http\Middleware\CheckIfFirstBusinessWasCompleted;
 use App\Http\Middleware\CheckPhoneVerification;
 use App\Http\Middleware\LoggedIn;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;

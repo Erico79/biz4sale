@@ -18,4 +18,8 @@ class Role extends Model
     public static function admin() {
         return self::where('code', self::Admin)->first();
     }
+
+    public function users() {
+        return $this->hasMany(User::class);
+    }
 }

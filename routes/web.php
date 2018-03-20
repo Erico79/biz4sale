@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('');
 Route::get('business-listing', 'BusinessListingController@index')
     ->name('upload-business')
     ->middleware('email.verified', 'phone.verified', 'logged.in');
@@ -28,6 +28,9 @@ Route::group(['prefix' => 'register'], function (){
 Route::group(['prefix' => 'confirm', 'middleware' => 'logged.in'], function (){
     Route::get('seller/{user_id}', 'SellerRegistrationController@verifyEmail');
     Route::post('phone-verification', 'SellerRegistrationController@verifyPhoneNumber');
+});
+Route::group(['prefix' => 'seller'], function() {
+    Route::post('login', 'SessionsController@login');
 });
 Auth::routes();
 

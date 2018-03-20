@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function masterfile() {
         return $this->belongsTo(Masterfile::class);
     }
+
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
 }
