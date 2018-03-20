@@ -8,7 +8,7 @@ return [
             'parent' => false
         ],
         (object) [
-            'title' => 'Categories',
+            'title' => 'Categorie',
             'url' => 'categories',
             'icon' => 'list',
             'parent' => false

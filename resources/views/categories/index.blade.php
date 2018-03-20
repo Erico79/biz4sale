@@ -1,5 +1,5 @@
 @extends('layouts.datatables')
-@section('title', 'Categories')
+@section('title', 'Categorie')
 
 @section('content')
     <div class="row">
