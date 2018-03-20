@@ -4,7 +4,7 @@
 @section('content')
     <section class="heading-section section section-on-bg">
         <div class="hero-wrapper">
-            <div class="hero-holder"></div>
+            <div class="hero-holder" style="background-image: url('{{ asset('assets/images/hero/hero-contact.jpg') }}');"></div>
             <div class="hero-mask-solid"></div>
         </div><!--//hero-wrapper-->
         <div class="container heading-content">

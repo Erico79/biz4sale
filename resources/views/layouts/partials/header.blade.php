@@ -11,7 +11,7 @@
             </button>
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="active nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>

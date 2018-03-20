@@ -18,7 +18,9 @@ class CreateBusinessListingTable extends Migration
             $table->integer('masterfile_id')->unsigned();
             $table->text('step_one');
             $table->text('step_two');
-            $table->boolean('status')->default(false);
+            $table->string('business_status');
+            $table->string('property_status');
+            $table->boolean('complete')->default(false);
         });
     }
 
