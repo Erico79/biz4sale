@@ -28,6 +28,10 @@ Tip 3: you can change the color of the sidebar with data-background-color="white
                     <ul class="nav">
                         <li><a href="{{ url('user/' . $user->id) }}">Profile</a></li>
                         <li><a href="{{ url('user/edit/' . $user->id) }}">Edit Profile</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     </ul>
                 </div>
             </div>
