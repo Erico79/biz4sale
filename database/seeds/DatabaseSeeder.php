@@ -15,5 +15,8 @@ class DatabaseSeeder extends Seeder
          $this->call(MasterfilesTableSeeder::class);
          $this->call(UsersTableSeeder::class);
          $this->call(CategoriesTableSeeder::class);
+         $this->call(PropertyAskingPricesTableSeeder::class);
+         $this->call(PropertySalesRevenueTableSeeder::class);
+         $this->call(PropertyCashFlowPricesTableSeeder::class);
     }
 }
