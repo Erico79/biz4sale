@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->foreign('parent_category_id')
                 ->references('id')->on('categories')
                 ->onUpdate('cascade');
+            $table->integer('level')->default(1);
             $table->timestamps();
         });
     }
