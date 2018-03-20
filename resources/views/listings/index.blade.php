@@ -152,6 +152,7 @@
                                             @endforeach
                                         @endif
                                     </select>
+                                    <span class="help-block"><small>Asking Price as a real property business <br/> (including trade, goodwill etc.) *</small></span>
                                 </div>
                             </div>
                             <div class="row both_fields">
@@ -165,6 +166,7 @@
                                             @endforeach
                                         @endif
                                     </select>
+                                    <span class="help-block"><small>Asking Price as a lease business <br/>(including trade, goodwill etc.) *</small></span>
                                 </div>
                             </div>
 
