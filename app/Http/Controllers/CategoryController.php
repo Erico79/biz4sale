@@ -15,7 +15,11 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories.index')->with('categories', $categories);
+        return view('categories.index')->with([
+            'categories' => $categories,
+            'url' => url('categories'),
+            'edit' => false
+        ]);
 
     }
 
@@ -37,7 +41,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = request()->validate([
+            'name' => 'required|unique:categories',
+            'parent_category_id' => 'required|numeric'
+        ]);
+
+        Category::create($post);
+
+        request()->session()->flash('success', 'New category has been created successfully.');
+        return redirect('categories');
     }
 
     /**
@@ -59,7 +71,15 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $category = Category::find($id);
+
+        return view('categories.index')->with([
+            'categories' => $categories,
+            'url' => url('categories/' . $id),
+            'edit' => true,
+            'cat' => $category
+        ]);
     }
 
     /**
@@ -82,6 +102,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+
+        request()->session()->flash('success', 'Category has been deleted');
+        return redirect('categories');
     }
 }

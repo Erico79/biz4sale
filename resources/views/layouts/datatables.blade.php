@@ -96,5 +96,10 @@
             $('.card .material-datatables label').addClass('form-group');
         });
     </script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
     @stack('js')
 @endsection
