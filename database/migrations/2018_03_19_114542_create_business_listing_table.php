@@ -20,7 +20,19 @@ class CreateBusinessListingTable extends Migration
             $table->text('step_two');
             $table->string('business_status');
             $table->string('property_status');
+            $table->integer('property_asking_price_id')->unsigned();
+            $table->integer('property_cash_flow_id')->unsigned();
+            $table->integer('property_sales_revenue_id')->unsigned();
             $table->boolean('complete')->default(false);
+            $table->foreign('property_asking_price_id')
+                ->references('id')->on('property_asking_prices')
+                ->onUpdate('cascade');
+            $table->foreign('property_cash_flow_id')
+                ->references('id')->on('property_cash_flows')
+                ->onUpdate('cascade');
+            $table->foreign('property_sales_revenue_id')
+                ->references('id')->on('property_sales_revenues')
+                ->onUpdate('cascade');
         });
     }
 

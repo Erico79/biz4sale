@@ -34,6 +34,7 @@
                     </li>
                     @endguest
                     @auth
+                        <li class="nav-item"><a href="#" class="nav-link">Hi, {{ auth()->user()->masterfile->first_name }}</a> </li>
                     <li class="nav-item">
                         <a class="nav-link login-trigger" href="{{ route('logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>

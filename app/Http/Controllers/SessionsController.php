@@ -8,7 +8,7 @@ class SessionsController extends Controller
 {
     public function login() {
         $post = request()->validate(['email' => 'required', 'password' => 'required']);
-        ;
+
         if (auth()->attempt($post)) {
             // TODO // redirect the user according to his role
         } else {
